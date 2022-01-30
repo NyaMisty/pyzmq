@@ -89,66 +89,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: macos-10.15
-            name: mac
-
-          - os: ubuntu-20.04
-            name: manylinux1
-            cibw:
-              build: "cp36* cp37*"
-              manylinux_image: manylinux1
-
-          - os: ubuntu-20.04
-            name: manylinux2010
-            cibw:
-              build: "cp38* cp39*"
-              manylinux_image: manylinux2010
-
-          - os: ubuntu-20.04
-            name: cp36-manylinux_aarch64
-            cibw:
-              build: "cp36*"
-              manylinux_image: manylinux2014
-              arch: aarch64
-
-          - os: ubuntu-20.04
-            name: cp37-manylinux_aarch64
-            cibw:
-              build: "cp37*"
-              manylinux_image: manylinux2014
-              arch: aarch64
-
-          - os: ubuntu-20.04
-            name: cp38-manylinux_aarch64
-            cibw:
-              build: "cp38*"
-              manylinux_image: manylinux2014
-              arch: aarch64
-
-          - os: ubuntu-20.04
-            name: cp39-manylinux_aarch64
-            cibw:
-              build: "cp39*"
-              manylinux_image: manylinux2014
-              arch: aarch64
-
-          - os: windows-2019
-            name: win32
-            architecture: x86
-            cibw:
-              build: "cp*win32"
-
-          - os: windows-2016
-            name: win32-pypy
-            architecture: x86
-            cibw:
-              build: "pp*win32"
-
           - os: windows-2019
             name: win_amd64
             architecture: x64
             cibw:
-              build: "*win_amd64"
+              build: "cp39-win_amd64"
 
     steps:
       - uses: actions/checkout@v2
